@@ -22,4 +22,17 @@ addf jogincr                  servo-thread
 net estop-out     <=  iocontrol.0.user-enable-out
 net estop-out     =>  iocontrol.0.emc-enable-in
 
+#  ---Classic Ladder---
+loadrt classicladder_rt
+addf classicladder.0.refresh servo-thread
+loadusr classicladder custom.clp --nogui
+
+#  ---Wago PLC ---
+loadusr mb2hal config=mb2hal.ini
+
+#  ---Classic Ladder Nets --
+net rly1test mb2hal.m1.rly.00 classicladder.0.out-00
+net inputtest mb2hal.m4.in.00 classicladder.0.in-00
+
+
 
