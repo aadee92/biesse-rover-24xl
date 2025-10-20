@@ -37,5 +37,5 @@ loadusr -W mb2hal config=mb2hal.ini
 #classicladder.0.out-00
 #net inputtest mb2hal.m4.in.00 classicladder.0.in-00
 
-net estop-out     =>  mb2hal.00.01.bit
+#net estop-out     =>  mb2hal.00.01.bit
 #net mb2hal.m1.rly.01.bit => mb2hal.m1.rly.00.bit
