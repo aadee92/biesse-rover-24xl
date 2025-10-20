@@ -5,8 +5,23 @@ placeFrames 0.3153061224489796
 set ::ratio 0.3153061224489796
 set ::old_w_leftf 160
 set ::watchlist {
+    pin+mb2hal.plcin.ILK.1.AP163.DC_BREAKERS_OK.bit
+    pin+mb2hal.plcin.ILK.2.AP190.Y_RES_OK.bit
+    pin+mb2hal.plcin.ILK.3.AP195.ILK_LOOP_OK.bit
+    pin+mb2hal.plcin.AG113.AUX_CRT_ON.bit
+    pin+mb2hal.plcin.AR13.PANEL_KEY.bit
+    pin+mb2hal.plcin.AR17.TOOL_ROT_DISABLED.bit
+    pin+mb2hal.plcin.AS18.INVERTER_IDLE.bit
+    pin+mb2hal.plcin.SB11.SLT_B_TEMP_OK.bit
+    pin+mb2hal.plcin.SA11.SLT_A_TEMP_OK.bit
+    pin+mb2hal.plcin.VB13.PANEL_SW.bit
+    pin+mb2hal.plcin.VF12.SPINDLE_OK.bit
+    pin+mb2hal.plcrly.AG113-AP12.MACHINE_POWER.bit
+    pin+mb2hal.plcrly.AG144-SA13.SPINDLE_CONTACTOR.bit
+    pin+mb2hal.plcrly.AG144-CA13.BORING_CONTACTOR.bit
+    pin+mb2hal.plcrly.AS16-AS15.INVERTER_CMD.bit
 }
-set ::workmode showhal
+set ::workmode watchhal
 set ::watchInterval 100
 set ::col1_width 100
 set ::ffmts 
