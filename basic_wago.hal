@@ -26,16 +26,18 @@ net estop-out     =>  iocontrol.0.emc-enable-in
 loadusr -W mb2hal config=mb2hal.ini
 
 #  ---Classic Ladder---
-#loadrt classicladder_rt
-#addf classicladder.0.refresh servo-thread
-#loadusr classicladder --nogui custom.clp 
+loadrt classicladder_rt
+addf classicladder.0.refresh servo-thread
+loadusr classicladder custom.clp 
 
 
 #  ---Classic Ladder Nets --
 #net mb2hal.m1.rly.00 => mb2hal.m1.rly.01
 #net mb2hal.m1.rly.00  0mb2hal.m4.in.00 
 #classicladder.0.out-00
-#net inputtest mb2hal.m4.in.00 classicladder.0.in-00
+net toolreleasebtn mb2hal.plcin.op_area.00.bit classicladder.0.in-00
+net toolrelease mb2hal.plcout.op_area.02.bit classicladder.0.out-00
+net toollock  mb2hal.plcout.op_area.01.bit classicladder.0.out-01
 
 #net estop-out     =>  mb2hal.00.01.bit
 #net mb2hal.m1.rly.01.bit => mb2hal.m1.rly.00.bit
