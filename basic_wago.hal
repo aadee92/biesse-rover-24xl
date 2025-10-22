@@ -32,12 +32,12 @@ loadusr classicladder custom.clp
 
 
 #  ---Classic Ladder Nets --
-#net mb2hal.m1.rly.00 => mb2hal.m1.rly.01
-#net mb2hal.m1.rly.00  0mb2hal.m4.in.00 
-#classicladder.0.out-00
-net toolreleasebtn mb2hal.plcin.op_area.00.bit classicladder.0.in-00
-net toolrelease mb2hal.plcout.op_area.02.bit classicladder.0.out-00
-net toollock  mb2hal.plcout.op_area.01.bit classicladder.0.out-01
+# Inputs
+net tool-release-button      mb2hal.opr.i.SA123-TOOL-REL-BUTTON.bit       classicladder.0.in-00
+
+# Outputs
+net tool-hold                mb2hal.opr.o.SA114-SPINDLE-HOLD-TOOL.bit     classicladder.0.out-00
+net tool-release             mb2hal.opr.o.SA115-SPINDLE-RELEASE-TOOL.bit  classicladder.0.out-01
 
 #net estop-out     =>  mb2hal.00.01.bit
 #net mb2hal.m1.rly.01.bit => mb2hal.m1.rly.00.bit

@@ -5,23 +5,15 @@ placeFrames 0.3153061224489796
 set ::ratio 0.3153061224489796
 set ::old_w_leftf 160
 set ::watchlist {
-    pin+mb2hal.plcin.ILK.1.AP163.DC_BREAKERS_OK.bit
-    pin+mb2hal.plcin.ILK.2.AP190.Y_RES_OK.bit
-    pin+mb2hal.plcin.ILK.3.AP195.ILK_LOOP_OK.bit
-    pin+mb2hal.plcin.AG113.AUX_CRT_ON.bit
-    pin+mb2hal.plcin.AR17.TOOL_ROT_DISABLED.bit
-    pin+mb2hal.plcin.AS18.INVERTER_IDLE.bit
-    pin+mb2hal.plcin.VF12.SPINDLE_OK.bit
-    pin+mb2hal.plcrly.AG113-AP12.MACHINE_POWER.bit
-    pin+mb2hal.plcrly.AG144-SA13.SPINDLE_CONTACTOR.bit
-    pin+mb2hal.plcrly.AG144-CA13.BORING_CONTACTOR.bit
-    pin+mb2hal.plcin.op_area.00.bit
-    pin+mb2hal.plcout.op_area.00.bit
-    pin+mb2hal.plcout.op_area.01.bit
-    pin+mb2hal.plcout.op_area.02.bit
-    pin+mb2hal.plcin.op_area.01.bit
-    pin+mb2hal.plcin.op_area.02.bit
-    pin+mb2hal.plcin.op_area.03.bit
+    pin+mb2hal.opr.i.SA123-TOOL-REL-BUTTON.bit
+    pin+mb2hal.opr.o.SA114-SPINDLE-HOLD-TOOL.bit
+    pin+mb2hal.opr.o.SA115-SPINDLE-RELEASE-TOOL.bit
+    pin+mb2hal.opr.o.SU11-SPINDLE-AIR-PURGE.bit
+    pin+mb2hal.opr.i.SA112-TOOL-LCKD-PRSNT.bit
+    pin+mb2hal.opr.i.SA111-TOOL-UNLOCKED-A.bit
+    pin+mb2hal.cab.in.ILK.1-AP163-DC_BKRS_OK.bit
+    pin+mb2hal.cab.in.ILK.2-AP190-Y_RES_OK.bit
+    pin+mb2hal.cab.in.ILK.3-AP195-ILK_LOOP_OK.bit
 }
 set ::workmode watchhal
 set ::watchInterval 100
