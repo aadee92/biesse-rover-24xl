@@ -25,10 +25,10 @@ addf [HMOT](CARD0).write         servo-thread
 # external output signals
 
 # --- SPINDLE-ENABLE ---
-net spindle-enable  =>     [HMOT](CARD0).ssr.00.out-01
+#net spindle-enable  =>     [HMOT](CARD0).ssr.00.out-01
 
 # --- SPINDLE-CW ---
-net spindle-cw  =>     [HMOT](CARD0).ssr.00.out-02
+#net spindle-cw  =>     [HMOT](CARD0).ssr.00.out-02
 
 
 # external input signals
@@ -274,7 +274,7 @@ setp   pid.s.error-previous-target true
 setp   pid.s.maxerror 0.000500
 
 net spindle-index-enable  <=> pid.s.index-enable
-net spindle-enable        =>  pid.s.enable
+#net spindle-enable        =>  pid.s.enable
 net spindle-vel-cmd-rpm     => pid.s.command
 net spindle-vel-fb-rpm      => pid.s.feedback
 net spindle-output        <=  pid.s.output
@@ -291,8 +291,8 @@ setp   [HMOT](CARD0).stepgen.05.control-type     1
 setp   [HMOT](CARD0).stepgen.05.maxaccel         [SPINDLE_0]MAX_ACCELERATION
 setp   [HMOT](CARD0).stepgen.05.maxvel           [SPINDLE_0]MAX_VELOCITY
 
-net spindle-enable          =>  [HMOT](CARD0).stepgen.05.enable
-net spindle-vel-cmd-rps     =>  [HMOT](CARD0).stepgen.05.velocity-cmd
+#net spindle-enable          =>  [HMOT](CARD0).stepgen.05.enable
+#net spindle-vel-cmd-rps     =>  [HMOT](CARD0).stepgen.05.velocity-cmd
 # ---Encoder feedback signals/setup---
 
 setp    [HMOT](CARD0).encoder.05.counter-mode 0

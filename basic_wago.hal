@@ -47,4 +47,23 @@ net tool-release             mb2hal.opr.o.SA115-SPINDLE-RELEASE-TOOL.bit  classi
 net machine-is-on                                                       => mb2hal.cab.out.AG113-AP12.MACHINE_POWER.bit
 
 
+# Spindle Control 
+loadrt conv_bit_s32 count=1
+addf conv-bit-s32.0 servo-thread
+
+net spindle-enable => conv-bit-s32.0.in 
+net spindle-enable-conv conv-bit-s32.0.out => mb2hal.spin.control-word.00.int
+
+#loadrt scale count=1
+#addf scale.0 servo-thread
+#setp scale.0.gain 10.0
+#net spindle-vel-cmd-rpm => scale.0.in
+#net spindle-speed-DAC scale.0.out => mb2hal.spin.freq-ref.00.int
+
+
+loadrt conv_float_s32 count=1
+addf conv-float-s32.0 servo-thread
+
+net spindle-vel-cmd-rpm => conv-float-s32.0.in
+net spindle-vel-cmd-rpm-conv conv-float-s32.0.out => mb2hal.spin.freq-ref.00.int
 
