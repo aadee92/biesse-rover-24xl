@@ -31,6 +31,7 @@ addf classicladder.0.refresh servo-thread
 loadusr classicladder custom.clp 
 
 
+
 #  ---Classic Ladder Nets --
 # Inputs
 net tool-release-button      mb2hal.opr.i.SA123-TOOL-REL-BUTTON.bit       classicladder.0.in-00
@@ -41,3 +42,9 @@ net tool-release             mb2hal.opr.o.SA115-SPINDLE-RELEASE-TOOL.bit  classi
 
 #net estop-out     =>  mb2hal.00.01.bit
 #net mb2hal.m1.rly.01.bit => mb2hal.m1.rly.00.bit
+
+# --- Machine Power ---
+net machine-is-on                                                       => mb2hal.cab.out.AG113-AP12.MACHINE_POWER.bit
+
+
+

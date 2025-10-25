@@ -14,6 +14,7 @@ set ::watchlist {
     pin+mb2hal.cab.in.ILK.1-AP163-DC_BKRS_OK.bit
     pin+mb2hal.cab.in.ILK.2-AP190-Y_RES_OK.bit
     pin+mb2hal.cab.in.ILK.3-AP195-ILK_LOOP_OK.bit
+    pin+mb2hal.cab.out.AG113-AP12.MACHINE_POWER.bit
 }
 set ::workmode watchhal
 set ::watchInterval 100
