@@ -281,15 +281,15 @@ net spindle-output        <=  pid.s.output
 
 # Step Gen signals/setup
 
-setp   [HMOT](CARD0).stepgen.05.dirsetup        [SPINDLE_0]DIRSETUP
-setp   [HMOT](CARD0).stepgen.05.dirhold         [SPINDLE_0]DIRHOLD
-setp   [HMOT](CARD0).stepgen.05.steplen         [SPINDLE_0]STEPLEN
-setp   [HMOT](CARD0).stepgen.05.stepspace       [SPINDLE_0]STEPSPACE
-setp   [HMOT](CARD0).stepgen.05.position-scale  [SPINDLE_0]STEP_SCALE
-setp   [HMOT](CARD0).stepgen.05.step_type        0
-setp   [HMOT](CARD0).stepgen.05.control-type     1
-setp   [HMOT](CARD0).stepgen.05.maxaccel         [SPINDLE_0]MAX_ACCELERATION
-setp   [HMOT](CARD0).stepgen.05.maxvel           [SPINDLE_0]MAX_VELOCITY
+#setp   [HMOT](CARD0).stepgen.05.dirsetup        [SPINDLE_0]DIRSETUP
+#setp   [HMOT](CARD0).stepgen.05.dirhold         [SPINDLE_0]DIRHOLD
+#setp   [HMOT](CARD0).stepgen.05.steplen         [SPINDLE_0]STEPLEN
+#setp   [HMOT](CARD0).stepgen.05.stepspace       [SPINDLE_0]STEPSPACE
+#setp   [HMOT](CARD0).stepgen.05.position-scale  [SPINDLE_0]STEP_SCALE
+#setp   [HMOT](CARD0).stepgen.05.step_type        0
+#setp   [HMOT](CARD0).stepgen.05.control-type     1
+#setp   [HMOT](CARD0).stepgen.05.maxaccel         [SPINDLE_0]MAX_ACCELERATION
+#setp   [HMOT](CARD0).stepgen.05.maxvel           [SPINDLE_0]MAX_VELOCITY
 
 #net spindle-enable          =>  [HMOT](CARD0).stepgen.05.enable
 #net spindle-vel-cmd-rps     =>  [HMOT](CARD0).stepgen.05.velocity-cmd
@@ -309,17 +309,17 @@ net spindle-index-enable     <=>  [HMOT](CARD0).encoder.05.index-enable
 
 # ---setup spindle control signals---
 
-net spindle-vel-cmd-rps        <=  spindle.0.speed-out-rps
-net spindle-vel-cmd-rps-abs    <=  spindle.0.speed-out-rps-abs
+#net spindle-vel-cmd-rps        <=  spindle.0.speed-out-rps
+#net spindle-vel-cmd-rps-abs    <=  spindle.0.speed-out-rps-abs
 net spindle-vel-cmd-rpm        <=  spindle.0.speed-out
 net spindle-vel-cmd-rpm-abs    <=  spindle.0.speed-out-abs
 net spindle-enable             <=  spindle.0.on
-net spindle-cw                 <=  spindle.0.forward
-net spindle-ccw                <=  spindle.0.reverse
+#net spindle-cw                 <=  spindle.0.forward
+#net spindle-ccw                <=  spindle.0.reverse
 net spindle-brake              <=  spindle.0.brake
 net spindle-revs               =>  spindle.0.revs
 net spindle-at-speed           =>  spindle.0.at-speed
-net spindle-vel-fb-rps         =>  spindle.0.speed-in
+#net spindle-vel-fb-rps         =>  spindle.0.speed-in
 net spindle-index-enable      <=>  spindle.0.index-enable
 
 # ---Setup spindle at speed signals---
