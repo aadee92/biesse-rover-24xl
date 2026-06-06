@@ -1,6 +1,6 @@
 # Halshow settings
 # This file is generated automatically.
-wm geometry . 1220x475+345+251
+wm geometry . 1220x475+236+87
 placeFrames 0.31539735099337746
 set ::ratio 0.31539735099337746
 set ::old_w_leftf 381
@@ -10,6 +10,10 @@ set ::watchlist {
     sig+spindle-cmd-freq-scale
     pin+spindle.0.speed-cmd-rps
     pin+mb2hal.cab.out.AS16-AS15.INVERTER_EN_CMD.bit
+    pin+spindle.0.speed-out
+    pin+spindle.0.speed-out-rps-abs
+    pin+mb2hal.cab.out.AG144-SA13.SPINDLE_CONTACTOR.bit
+    pin+mb2hal.cab.out.AG113-AP12.MACHINE_POWER.bit
 }
 set ::workmode watchhal
 set ::watchInterval 100

@@ -34,22 +34,23 @@ loadusr classicladder custom.clp
 
 #  ---Classic Ladder Nets --
 # Inputs
-net tool-release-button      mb2hal.opr.i.SA123-TOOL-REL-BUTTON.bit       classicladder.0.in-00
+net tool-release-button          mb2hal.opr.i.SA123-TOOL-REL-BUTTON.bit            classicladder.0.in-00
+net spindle-on-cmd               spindle.0.on                                      classicladder.0.in-01
+
+
 
 # Outputs
-net tool-hold                mb2hal.opr.o.SA114-SPINDLE-HOLD-TOOL.bit     classicladder.0.out-00
-net tool-release             mb2hal.opr.o.SA115-SPINDLE-RELEASE-TOOL.bit  classicladder.0.out-01
-
-#net estop-out     =>  mb2hal.00.01.bit
-#net mb2hal.m1.rly.01.bit => mb2hal.m1.rly.00.bit
+net tool-hold                      mb2hal.opr.o.SA114-SPINDLE-HOLD-TOOL.bit          classicladder.0.out-00
+net tool-release                   mb2hal.opr.o.SA115-SPINDLE-RELEASE-TOOL.bit       classicladder.0.out-01
+net inverter-enable-contactor      mb2hal.cab.out.AS16-AS15.INVERTER_EN_CMD.bit      classicladder.0.out-02
+net inverter-to-spindle-contactor  mb2hal.cab.out.AG144-SA13.SPINDLE_CONTACTOR.bit   classicladder.0.out-03
+net spindle-air-purge              mb2hal.opr.o.SU11-SPINDLE-AIR-PURGE.bit           classicladder.0.out-04
 
 # --- Machine Power ---
-net machine-is-on                                                       => mb2hal.cab.out.AG113-AP12.MACHINE_POWER.bit
+net machine-is-on => mb2hal.cab.out.AG113-AP12.MACHINE_POWER.bit
 
 
 # Spindle Control
-
-
 
 # Yaskawa Spindel Configuration
 # Reg 0x001 - Control Word - WRITE
@@ -99,7 +100,7 @@ addf conv-float-s32.0 servo-thread
 
 loadrt scale count=1
 addf scale.0 servo-thread
-setp scale.0.gain 10.0
+setp scale.0.gain 20.0
 
 net spindle-cmd-freq-scale       spindle.0.speed-out-rps-abs => scale.0.in
 net spindle-cmd-freq-float       scale.0.out                 => conv-float-s32.0.in 
@@ -140,7 +141,6 @@ loadrt conv_s32_float count=1
 addf conv-s32-float.0 servo-thread
 
 net spindle-freq-act-s32   mb2hal.spin.0x021.output-freq.00.int => conv-s32-float.0.in
-net spindle-freq-act-float conv-s32-float.0.out           => spindle.0.speed-in
+net spindle-freq-act-float conv-s32-float.0.out                 => spindle.0.speed-in
 
-#net spindle-cmd-freq-int mb2hal.spin.output-freq.00.int => conv-float-s32.0.in
-#net spindle-cmd-freq- conv-float-s32.0.out => mb2hal.spin.freq-ref.00.int
+
