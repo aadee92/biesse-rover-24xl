@@ -46,6 +46,14 @@ net inverter-enable-contactor      mb2hal.cab.out.AS16-AS15.INVERTER_EN_CMD.bit 
 net inverter-to-spindle-contactor  mb2hal.cab.out.AG144-SA13.SPINDLE_CONTACTOR.bit   classicladder.0.out-03
 net spindle-air-purge              mb2hal.opr.o.SU11-SPINDLE-AIR-PURGE.bit           classicladder.0.out-04
 
+net spindle-piston-p1-lower        mb2hal.opr.o.SA17-SPINDLE-P1-LOWER.bit              classicladder.0.out-05 
+net spindle-piston-p1-raise        mb2hal.opr.o.SA16-SPINDLE-P1-RAISE.bit              classicladder.0.out-06 
+net spindle-piston-p2-lower        mb2hal.opr.o.SA132-SPINDLE-P2-LOWER.bit             classicladder.0.out-07  
+net spindle-piston-p2-raise        mb2hal.opr.o.SA131-SPINDLE-P2-RAISE.bit             classicladder.0.out-08  
+net spindle-piston-p3-lower        mb2hal.opr.o.SA134-SPINDLE-P3-LOWER.bit             classicladder.0.out-09  
+net spindle-piston-p3-raise        mb2hal.opr.o.SA133-SPINDLE-P3-RAISE.bit             classicladder.0.out-10 
+
+
 # --- Machine Power ---
 net machine-is-on => mb2hal.cab.out.AG113-AP12.MACHINE_POWER.bit
 
