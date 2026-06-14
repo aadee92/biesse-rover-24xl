@@ -74,8 +74,8 @@ net spin.0x001.w.05-cls_t6 => wsum.0.bit.5.in #closed term 6
 net spin.0x001.w.06-cls_t7 => wsum.0.bit.6.in #closed term 7
 net spin.0x001.w.07-cls_t8 => wsum.0.bit.7.in #closed term 8
 
-net spin.0x001.w.00-fwd <= spindle.0.forward 
-net spin.0x001.w.01-rev <= spindle.0.reverse
+net spin.0x001.w.00-fwd <= spindle.0.reverse 
+net spin.0x001.w.01-rev <= spindle.0.forward
 
 net spindle-control-word wsum.0.sum => mb2hal.spin.control-word.00.int
 
